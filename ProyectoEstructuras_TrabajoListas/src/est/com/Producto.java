@@ -11,6 +11,12 @@ public class Producto {
 		siguiente= n;
 		
 		}
+		public Producto(String s, Producto n){
+			nombre =s;
+			this.cantidad=0;
+			siguiente= n;
+			
+			}
 		public Producto (String s,int c){//Primer nodo
 			this.nombre=s;
 			this.cantidad=c;
@@ -43,6 +49,12 @@ public class Producto {
 		public void setSiguiente(Producto siguiente) {
 			this.siguiente = siguiente;
 		}
+		@Override
+		public String toString() {
+			return "producto: " + nombre + "  cantidad: " + cantidad ;
+		}
+		
+		
 		
 
 }

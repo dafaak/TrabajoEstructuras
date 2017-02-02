@@ -44,7 +44,7 @@ public class Listaestudiantes {
 		else{
 	String salida="";
 	Estudiante p =inicio;
-	{salida+=" Lista de nodos:\n";
+	{salida+="Lista de estudiantes:\n";
 	salida+=p.toString()+"\n";
 	p=p.getSiguiente();
 	while(p!=null){

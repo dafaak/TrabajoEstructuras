@@ -14,12 +14,15 @@ public class App {
         System.out.println(l.toString());
         long ci=123456;
         if (l.existeElemento(ci)==true){System.out.println("El alumno "+ci+ " se encuentra registrado");}
-        else{System.out.println("El alumno "+ci+" no se encuentra registrado");}
+        else{System.out.println("El alumno "+ci+" no se encuentra registrado\n\n");}
 	
 	
 	
 	
         Listaproductos lp= new Listaproductos();
+        lp.insertarInicio("Atún", 2);
+        lp.insertarInicio("arroz");
+        System.out.println(lp.toString());
         	}
 
 }

@@ -16,21 +16,36 @@ public class Listaproductos {
 		if(estaVacia())
 		{inicio=new Producto(nombre,c);this.longitud+=1;}
 		
-		else {if (existeElemento(c)==false ){inicio= new Producto(nombre,c,inicio);this.longitud+=1;}
+		else {if (existeElemento(nombre)==false ){inicio= new Producto(nombre,c,inicio);this.longitud+=1;}
 		
 		}
 		
 		
 		}
-
 	
+	public void insertarInicio(String nombre){
+		if(estaVacia())
+		{inicio=new Producto(nombre);this.longitud+=1;}
+		
+		else {if (existeElemento(nombre)==false ){inicio= new Producto(nombre,inicio);this.longitud+=1;}
+		
+		}
+		
+		
+		}
 
-	public boolean existeElemento(long c){
+	public String verificarProducto(Producto p){
+		if(p.getCantidad()==0){return " Incompleto";}
+		else{return "Listo";}
+		
+	}
+
+	public boolean existeElemento(String nombre){
 		Producto p=inicio;
 		if (estaVacia()==true){return false;}
 		else {
 		while(p!=null){
-			if(p.getCantidad()==c){return true;};
+			if(p.getNombre().equalsIgnoreCase(nombre)){return true;};
 			p=p.getSiguiente();
 		}
 		}
@@ -42,11 +57,11 @@ public class Listaproductos {
 		else{
 	String salida="";
 	Producto p =inicio;
-	{salida+=" Lista de nodos:\n";
-	salida+=p.toString()+"\n";
+	{salida+="Lista de productos:\n";
+	salida+=p.toString()+"  "+verificarProducto(p)+"\n";
 	p=p.getSiguiente();
 	while(p!=null){
-		salida+=p.toString()+"\n";
+		salida+=p.toString()+"  "+verificarProducto(p)+"\n";
 		p=p.getSiguiente();}
 		
 		
