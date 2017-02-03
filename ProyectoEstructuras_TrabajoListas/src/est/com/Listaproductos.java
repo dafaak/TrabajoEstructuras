@@ -39,6 +39,15 @@ public class Listaproductos {
 		else{return "Listo";}
 		
 	}
+	
+	public String productoIncompleto(Listaproductos l){
+		Producto p= l.inicio;
+		String salida="";
+		while(p!=null){
+		if (verificarProducto(p).equalsIgnoreCase(" Incompleto")){salida+=p.getNombre()+"\n";}
+		p=p.getSiguiente();}
+		return salida;
+	}
 
 	public boolean existeElemento(String nombre){
 		Producto p=inicio;
@@ -57,7 +66,7 @@ public class Listaproductos {
 		else{
 	String salida="";
 	Producto p =inicio;
-	{salida+="Lista de productos:\n";
+	{salida+="\n\nLista de productos:\n";
 	salida+=p.toString()+"  "+verificarProducto(p)+"\n";
 	p=p.getSiguiente();
 	while(p!=null){
